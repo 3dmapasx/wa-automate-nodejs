@@ -1,8 +1,11 @@
 #!/bin/bash
-apt update && apt install -y curl git
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-source "$NVM_DIR/nvm.sh"
-nvm install 18
-nvm use 18
+
+# Cria a pasta da aplicação
+mkdir -p /app
+cd /app
+
+# Clona novamente o código dentro da pasta certa
+git clone https://github.com/3dmapasx/wa-automate-nodejs.git .
+
+# Instala as dependências do Node.js
 npm install --legacy-peer-deps
